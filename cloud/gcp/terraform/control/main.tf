@@ -38,11 +38,13 @@ module "hashistack_jobs" {
 }
 
 # GCP Project
-resource "random_pet" "hashistack" {}
+resource "random_pet" "hashistack" {
+  id = var.project_id
+}
 
 resource "google_project" "hashistack" {
   name            = "hashistack-${random_pet.hashistack.id}"
-  project_id      = var.project_id
+  project_id      = "hashistack-${random_pet.hashistack.id}"
   org_id          = var.org_id
   billing_account = var.billing_account
 }
