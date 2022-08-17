@@ -8,6 +8,17 @@ variable "billing_account" {
   type        = string
 }
 
+variable "project_id" {
+  description = "project id."
+  type        = string
+}
+
+variable "project_number" {
+  description = "project number."
+  type        = string
+}
+
+
 variable "region" {
   description = "The region where resources will be created."
   type        = string
